@@ -10,9 +10,9 @@ class User(AbstractUser):
     username = models.CharField(_('Username'), unique=True,max_length=15, blank=True, null=True)
     email = models.EmailField(_('Email Address'), null=True, blank=True)
     password = models.CharField(_('Password'), max_length=155, null=True, blank=True)
-    latitude = models.DecimalField(_('work_location_lat'), default=0, null=False, decimal_places=15,
+    latitude = models.DecimalField(_('Latitude'), default=0, null=False, decimal_places=15,
                                             max_digits=20)
-    longitude = models.DecimalField(_('work_location_lat'), default=0, null=False, decimal_places=15,
+    longitude = models.DecimalField(_('Longitude'), default=0, null=False, decimal_places=15,
                                             max_digits=20) 
     created_at = models.DateTimeField(null=False, blank=False, auto_now_add=True)
     updated_at = models.DateTimeField(null=False, auto_now=True, db_index=True)
@@ -22,9 +22,9 @@ class User(AbstractUser):
 class Shop(models.Model):
     shop_name = models.CharField(_('Shop Name'),max_length=50,null=True,blank=True)
     shop_address = models.CharField(_('Address'),max_length=155,null=True,blank=True)
-    latitude = models.DecimalField(_('work_location_lat'), default=0, null=False, decimal_places=15,
+    latitude = models.DecimalField(_('Latitude'), default=0, null=False, decimal_places=15,
                                             max_digits=20)
-    longitude = models.DecimalField(_('work_location_lat'), default=0, null=False, decimal_places=15,
+    longitude = models.DecimalField(_('Longitude'), default=0, null=False, decimal_places=15,
                                             max_digits=20)
     created_at = models.DateTimeField(_('created_at'), auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(_('updated_at'), auto_now=True, db_index=True)
