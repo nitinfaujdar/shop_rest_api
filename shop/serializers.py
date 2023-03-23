@@ -24,9 +24,8 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             username=validated_data['username'],
             phone=validated_data['phone'],
             email=validated_data['email'],
-            firebase_token=validated_data['firebase_token']
         )
-        user = User.objects.get(Q(phone=validated_data['phone']) & Q(user_types='recruiter'))
+        user = User.objects.get(phone=validated_data['phone'])
         user.set_password(validated_data['password'])
         user.save()
         return user
